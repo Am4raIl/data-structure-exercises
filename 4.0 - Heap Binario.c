@@ -39,10 +39,8 @@ void MaxHeapify(Heap *heap, int i) {
     }
 }
 
-// Função ConstruirHeapMax
 void ConstruirHeapMax(Heap *heap) {
     heap->tamanhoHeap = heap->tamanho;
-
     for (int i = heap->tamanho / 2 - 1; i >= 0; i--) MaxHeapify(heap, i);
 }
 
@@ -69,7 +67,6 @@ int main() {
     heap.tamanho = 10;
     heap.tamanhoHeap = heap.tamanho;
     
-    // Inicializando o heap com alguns valores
     int valores[] = {4, 10, 3, 5, 1, 6, 8, 9, 2, 7};
     for (int i = 0; i < heap.tamanho; i++) {
         heap.arr[i] = valores[i];
@@ -78,7 +75,6 @@ int main() {
     printf("Array original:\n");
     ImprimirArray(heap.arr, heap.tamanho);
 
-    // Aplicando heapsort
     Heapsort(&heap);
 
     printf("Array ordenado:\n");
